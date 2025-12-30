@@ -99,62 +99,27 @@ CATEGORY_FILTER_VALUE=${config.CATEGORY_FILTER_VALUE}
   fs.writeFileSync('.env', envContent);
   console.log('✅ .env file created!');
 
-  // Generate GitHub secrets instructions
-  console.log('\n📝 Generating GitHub secrets guide...');
-
-  const secretsGuide = `# GitHub Secrets Configuration
-
-To set up automated daily syncing at 7 AM, add these secrets to your GitHub repository:
-
-1. Go to your GitHub repository
-2. Click Settings → Secrets and variables → Actions
-3. Click "New repository secret"
-4. Add each of these secrets:
-
-## Secrets to Add:
-
-**PERSONAL_NOTION_TOKEN**
-\`\`\`
-${config.PERSONAL_NOTION_TOKEN}
-\`\`\`
-
-**COMPANY_NOTION_TOKEN**
-\`\`\`
-${config.COMPANY_NOTION_TOKEN}
-\`\`\`
-
-**PERSONAL_DATABASE_ID**
-\`\`\`
-${config.PERSONAL_DATABASE_ID}
-\`\`\`
-
-**COMPANY_DATABASE_ID**
-\`\`\`
-${config.COMPANY_DATABASE_ID}
-\`\`\`
-
-**CATEGORY_PROPERTY_NAME**
-\`\`\`
-${config.CATEGORY_PROPERTY_NAME}
-\`\`\`
-
-**CATEGORY_FILTER_VALUE**
-\`\`\`
-${config.CATEGORY_FILTER_VALUE}
-\`\`\`
-
-## Next Steps:
-
-1. Push this code to GitHub
-2. Add the secrets above
-3. The workflow will run daily at 7 AM automatically
-4. You can also trigger it manually from the Actions tab
-
-Done! 🎉
-`;
-
-  fs.writeFileSync('GITHUB_SECRETS.md', secretsGuide);
-  console.log('✅ GITHUB_SECRETS.md created with your configuration!');
+  // Display GitHub secrets for user to save
+  console.log('\n📝 GitHub Secrets - SAVE THESE!');
+  console.log('\n⚠️  Copy this list somewhere safe. You\'ll need it in the next step:\n');
+  console.log('PERSONAL_NOTION_TOKEN');
+  console.log(config.PERSONAL_NOTION_TOKEN);
+  console.log('');
+  console.log('COMPANY_NOTION_TOKEN');
+  console.log(config.COMPANY_NOTION_TOKEN);
+  console.log('');
+  console.log('PERSONAL_DATABASE_ID');
+  console.log(config.PERSONAL_DATABASE_ID);
+  console.log('');
+  console.log('COMPANY_DATABASE_ID');
+  console.log(config.COMPANY_DATABASE_ID);
+  console.log('');
+  console.log('CATEGORY_PROPERTY_NAME');
+  console.log(config.CATEGORY_PROPERTY_NAME);
+  console.log('');
+  console.log('CATEGORY_FILTER_VALUE');
+  console.log(config.CATEGORY_FILTER_VALUE);
+  console.log('\n✅ Configuration complete!');
 
   // Test the connection
   console.log('\n🧪 Would you like to test the connection now?');
@@ -173,9 +138,9 @@ Done! 🎉
 
   console.log('\n✅ Setup complete!');
   console.log('\n📚 Next steps:');
-  console.log('   1. Review the .env file');
-  console.log('   2. Test locally: npm start');
-  console.log('   3. Push to GitHub and add secrets (see GITHUB_SECRETS.md)');
+  console.log('   1. Test locally: npm start');
+  console.log('   2. Push to GitHub: git add . && git commit -m "Add config" && git push');
+  console.log('   3. Add the secrets above to GitHub (Settings → Secrets → Actions)');
   console.log('\n🎉 You\'re all set!\n');
 
   rl.close();

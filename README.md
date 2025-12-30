@@ -99,7 +99,7 @@ The wizard will ask you 6 questions. Here's what to have ready:
 4. Copy the database URL
 5. Paste it when the wizard asks
 
-✅ The wizard creates two files: `.env` and `GITHUB_SECRETS.md`
+✅ The wizard creates a `.env` file and displays your GitHub secrets - **copy and save them somewhere!**
 
 ### Step 6: Test It Locally
 
@@ -129,15 +129,15 @@ git push
 3. In the left sidebar, click **Secrets and variables** → **Actions**
 4. Click the green **"New repository secret"** button
 
-Now open the `GITHUB_SECRETS.md` file in your codespace (it was created by the wizard).
+Now use the list the wizard displayed earlier (the one you saved).
 
-For each secret listed in that file:
+For each secret in your saved list:
 1. Click **"New repository secret"**
-2. Copy the name from GITHUB_SECRETS.md into the "Name" field
-3. Copy the value from GITHUB_SECRETS.md into the "Secret" field (the part in the code block)
+2. Copy the name into the "Name" field
+3. Copy the value into the "Secret" field
 4. Click **"Add secret"**
 
-Repeat for all 6 secrets:
+Add all 6 secrets:
 - `PERSONAL_NOTION_TOKEN`
 - `COMPANY_NOTION_TOKEN`
 - `PERSONAL_DATABASE_ID`
