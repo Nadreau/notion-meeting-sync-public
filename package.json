@@ -1,0 +1,16 @@
+{
+  "name": "notion-meeting-sync",
+  "version": "1.0.0",
+  "description": "Automatically sync meetings from personal Notion to company workspace",
+  "main": "sync-meetings.js",
+  "scripts": {
+    "start": "node sync-meetings.js",
+    "setup": "node setup.js"
+  },
+  "dependencies": {
+    "@notionhq/client": "^2.2.15"
+  },
+  "engines": {
+    "node": ">=18"
+  }
+}

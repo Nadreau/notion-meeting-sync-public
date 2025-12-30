@@ -1,0 +1,33 @@
+name: Sync Notion Meetings
+
+on:
+  schedule:
+    # Runs at 7:00 AM EST (12:00 PM UTC) every day
+    - cron: '0 12 * * *'
+  workflow_dispatch: # Allows manual triggering from GitHub UI
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '18'
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: Run sync script
+        env:
+          PERSONAL_NOTION_TOKEN: ${{ secrets.PERSONAL_NOTION_TOKEN }}
+          COMPANY_NOTION_TOKEN: ${{ secrets.COMPANY_NOTION_TOKEN }}
+          PERSONAL_DATABASE_ID: ${{ secrets.PERSONAL_DATABASE_ID }}
+          COMPANY_DATABASE_ID: ${{ secrets.COMPANY_DATABASE_ID }}
+          CATEGORY_PROPERTY_NAME: ${{ secrets.CATEGORY_PROPERTY_NAME }}
+          CATEGORY_FILTER_VALUE: ${{ secrets.CATEGORY_FILTER_VALUE }}
+        run: npm start
