@@ -30,34 +30,25 @@ Automatically sync meetings from your personal Notion workspace to a company/tea
 
 ✅ You now have your own copy!
 
-### Step 2: Download to Your Computer
+### Step 2: Edit in the Browser (No Downloads Needed!)
 
-1. On your new repository page, click the green **"Code"** button
-2. Click **"Download ZIP"**
-3. Unzip the downloaded file
-4. Open Terminal (Mac) or Command Prompt (Windows)
-5. Type `cd ` (with a space after cd)
-6. Drag the unzipped folder into the Terminal window (this auto-fills the path)
-7. Press Enter
+1. In your new repository, click the **"Code"** button
+2. Click the **"Codespaces"** tab
+3. Click **"Create codespace on main"**
+4. Wait 30 seconds for it to load
 
-You're now inside the project folder!
+✅ You now have a browser-based coding environment! (It looks like VS Code)
 
-### Step 3: Install Node.js (If You Don't Have It)
+### Step 3: Install Dependencies
 
-1. Go to https://nodejs.org
-2. Download and install the LTS version
-3. Restart Terminal/Command Prompt
-
-### Step 4: Install Dependencies
-
-In Terminal, type:
+In the Terminal at the bottom of your codespace, type:
 ```bash
 npm install
 ```
 
 Press Enter and wait for it to finish (30 seconds).
 
-### Step 5: Run the Setup Wizard
+### Step 4: Run the Setup Wizard
 
 In Terminal, type:
 ```bash
@@ -79,7 +70,7 @@ The wizard will ask you 6 questions. Here's what to have ready:
 1. Open your meetings database in Notion
 2. Copy the URL from your browser
 3. Paste it when the wizard asks
-4. **Then:** Click the `...` menu in your database → **"Add connections"** → Select your integration
+4. **Then:** In Notion, go to **Settings → Connections** → Find your **"Personal Meeting Sync"** integration → Click it → Select your meetings database to give it access
 
 #### Question 3: Category Property Name
 - If you have a property called "Category" or "Tags" that you use to label meetings, enter that name
@@ -104,7 +95,7 @@ The wizard will ask you 6 questions. Here's what to have ready:
    - A title property (can be named anything)
    - **URL** (type: URL)
    - **Transcript** (type: Text)
-3. Click the `...` menu → **"Add connections"** → Select your integration
+3. In Notion, go to **Settings → Connections** → Find your **"Meeting Sync"** integration → Click it → Select your company meetings database to give it access
 4. Copy the database URL
 5. Paste it when the wizard asks
 
@@ -119,27 +110,19 @@ npm start
 
 You should see meetings being copied! If it works, move to Step 7.
 
-### Step 7: Put It on GitHub
+### Step 7: Save Your Configuration to GitHub
 
-#### A. Upload Your Changes
+In the Terminal in your codespace, run these commands:
 
-**Option 1: Using GitHub Desktop (Easier)**
-1. Download GitHub Desktop: https://desktop.github.com
-2. Open it and sign in
-3. Click **File → Add Local Repository**
-4. Choose your project folder
-5. Click **"Publish repository"**
-
-**Option 2: Using Terminal**
 ```bash
 git add .
 git commit -m "Add my configuration"
 git push
 ```
 
-If `git push` asks for credentials, you need to set up authentication first.
+✅ Your configuration is now saved to GitHub!
 
-#### B. Add Secrets to GitHub
+### Step 8: Add Secrets to GitHub
 
 1. Go to your repository on GitHub (e.g., `github.com/YOUR_USERNAME/my-meeting-sync`)
 2. Click **Settings** (top menu)
@@ -162,7 +145,7 @@ Repeat for all 6 secrets:
 - `CATEGORY_PROPERTY_NAME`
 - `CATEGORY_FILTER_VALUE`
 
-### Step 8: You're Done!
+### Step 9: You're Done!
 
 The sync will now run automatically every day at 7 AM!
 
@@ -183,10 +166,10 @@ You need to install Node.js (see Step 3).
 Make sure the property name matches exactly in your Notion database (case-sensitive).
 
 ### "object_not_found"
-You forgot to share the database with your integration:
-1. Open the database in Notion
-2. Click `...` menu → "Add connections"
-3. Select your integration
+You forgot to give your integration access to the database:
+1. In Notion, go to **Settings → Connections**
+2. Find your integration and click it
+3. Select the database to give it access
 
 ### Transcripts aren't copying
 Make sure:

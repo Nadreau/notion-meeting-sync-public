@@ -33,9 +33,9 @@ async function setup() {
   // Step 2: Personal Database
   console.log('\n📋 STEP 2: Personal Meetings Database');
   console.log('   1. Open your personal meetings database in Notion');
-  console.log('   2. Share it with your integration (click "..." → Add connections)');
-  console.log('   3. Copy the database URL');
-  console.log('   4. The database ID is the long string in the URL\n');
+  console.log('   2. Go to Settings → Connections → Find your "Personal Meeting Sync" integration');
+  console.log('   3. Click your integration and select your meetings database to give it access');
+  console.log('   4. Copy the database URL from your browser\n');
   console.log('   Example URL: https://www.notion.so/abc123def456?v=...');
   console.log('   Database ID: abc123def456\n');
 
@@ -70,8 +70,9 @@ async function setup() {
   console.log('      - A title property (any name) - REQUIRED');
   console.log('      - URL (type: URL) - REQUIRED');
   console.log('      - Transcript (type: Text) - REQUIRED');
-  console.log('   3. Share it with your company integration');
-  console.log('   4. Copy the database URL or ID\n');
+  console.log('   3. Go to Settings → Connections → Find your "Meeting Sync" integration');
+  console.log('   4. Click your integration and select your company database to give it access');
+  console.log('   5. Copy the database URL from your browser\n');
 
   const companyDbUrl = await question('Enter your company database URL or ID: ');
   config.COMPANY_DATABASE_ID = extractDatabaseId(companyDbUrl);

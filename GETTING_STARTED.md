@@ -10,15 +10,13 @@
 ## Step-by-Step Setup
 
 ### 1. Click "Use This Template"
-At the top of this GitHub page, click the green "Use this template" button. This creates your own copy.
+At the top of this GitHub page, click the green "Use this template" button → "Create a new repository". This creates your own copy.
 
-### 2. Download Your Copy
-```bash
-# Click the green "Code" button, then "Download ZIP"
-# Unzip the folder
-# Open Terminal and navigate to the folder:
-cd path/to/notion-meeting-sync
-```
+### 2. Open in Browser (No Downloads!)
+1. Click the **"Code"** button
+2. Click the **"Codespaces"** tab
+3. Click **"Create codespace on main"**
+4. Wait 30 seconds - you now have a browser-based coding environment!
 
 ### 3. Install
 ```bash
@@ -45,8 +43,8 @@ If it works, you'll see meetings being copied!
 
 ### 6. Make It Automatic
 
-1. Push your code to GitHub (the wizard shows you how)
-2. Add the secrets from `GITHUB_SECRETS.md` to GitHub
+1. Push your code: `git add . && git commit -m "Add config" && git push`
+2. Add the secrets from `GITHUB_SECRETS.md` to GitHub (Settings → Secrets → Actions)
 3. Done! It runs every morning at 7 AM
 
 ## Database Setup
