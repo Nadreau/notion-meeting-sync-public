@@ -25,7 +25,8 @@ Automatically sync meetings from your personal Notion workspace to a company/tea
 2. A menu will appear - **click "Create a new repository"** (NOT "Open in a codespace")
 3. Give it a name like `my-meeting-sync`
 4. Make sure it's set to **Private** (recommended)
-5. Click **"Create repository"**
+5. **Leave "Include all branches" unchecked** (you only need the main branch)
+6. Click **"Create repository"**
 
 ✅ You now have your own copy!
 
