@@ -129,7 +129,7 @@ git push
 3. In the left sidebar, click **Secrets and variables** → **Actions**
 4. Click the green **"New repository secret"** button
 
-Now open the `GITHUB_SECRETS.md` file on your computer (it was created by the wizard).
+Now open the `GITHUB_SECRETS.md` file in your codespace (it was created by the wizard).
 
 For each secret listed in that file:
 1. Click **"New repository secret"**
@@ -156,45 +156,3 @@ The sync will now run automatically every day at 7 AM!
 4. Click the **"Run workflow"** button on the right
 5. Click the green **"Run workflow"** button in the dropdown
 6. Wait 30 seconds, then refresh the page to see results
-
-## Troubleshooting
-
-### "Command not found: npm"
-You need to install Node.js (see Step 3).
-
-### "Could not find property..."
-Make sure the property name matches exactly in your Notion database (case-sensitive).
-
-### "object_not_found"
-You forgot to give your integration access to the database:
-1. In Notion, go to **Settings → Connections**
-2. Find your integration and click it
-3. Select the database to give it access
-
-### Transcripts aren't copying
-Make sure:
-1. You have a "Transcript" property in both databases
-2. It's a Text type (not Rich Text, not Formula)
-3. The transcript is actually in that property (not in the AI Meeting Notes block)
-
-### Need to test again?
-Run `npm start` in Terminal to test locally anytime.
-
-### Want to change when it runs?
-Edit `.github/workflows/sync-meetings.yml` and change the cron schedule.
-
-## How to Update Your Configuration Later
-
-If you need to change your tokens, database IDs, or filter:
-
-1. Edit the `.env` file on your computer
-2. Update the matching secrets on GitHub (Settings → Secrets → Actions)
-3. Done!
-
-## Questions?
-
-Open an issue on GitHub and I'll help you out!
-
-## License
-
-MIT - Use freely!
